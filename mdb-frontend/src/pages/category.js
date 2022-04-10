@@ -6,7 +6,7 @@ import AddCategory from '../crud/addCategory';
 
 const Category = () => {
   return (
-    <div className="container-fluid  p-5">
+    <div className="container-fluid p-5">
       <h3 className="h3">Category</h3>
       <Link to="/addCategory">
       <button className="btn btn-light mb-4 text-success" onClick={() => AddCategory}> Add new category</button>

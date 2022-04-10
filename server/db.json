@@ -1,17 +1,40 @@
 {
   "products": [
     {
-      "id": 25,
-      "name": "sss",
-      "description": "ttttttttt",
-      "category": "uuuuuuuuuu",
-      "price": "77"
+      "id": 1,
+      "name": "Brad",
+      "description": "Omega",
+      "category": "Tiana",
+      "price": 123
+    },
+    {
+      "id": 2,
+      "name": "Alex",
+      "description": "Omni",
+      "category": "Brado",
+      "price": 345
+    },
+    {
+      "name": "joanna",
+      "description": "eeeeeeee",
+      "category": "Moni",
+      "price": "0",
+      "": "",
+      "id": 3
+    },
+    {
+      "name": "ddd",
+      "description": "ddd",
+      "category": "Alex",
+      "price": "2",
+      "": "",
+      "id": 4
     }
   ],
   "categories": [
     {
       "id": 1,
-      "category": "Brad"
+      "category": "Brado"
     },
     {
       "id": 2,
@@ -28,6 +51,10 @@
     {
       "id": 5,
       "category": "Sevi"
+    },
+    {
+      "id": 6,
+      "category": "Omni"
     }
   ]
 }

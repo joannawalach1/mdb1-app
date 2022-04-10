@@ -7,7 +7,7 @@ const ViewProduct = () => {
     name: "", 
     description: "",
     category: "",
-    price: ""
+    price: "",
   });
 
   const { id } = useParams();

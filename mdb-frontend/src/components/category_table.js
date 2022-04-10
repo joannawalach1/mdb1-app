@@ -27,7 +27,7 @@ const ProductsTable = () => {
   if (!category) return null;
 
   return (
-    <div className="table-responsive w-50">
+    <div className="table-responsive w-100">
       <table className="table table-sm table-light table-striped table-hover">
         <thead>
           <tr>

@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import AddCategory from "./addCategory";
 
 const AddProduct = () => {
   let navigate = useNavigate();
@@ -10,16 +11,27 @@ const AddProduct = () => {
     category: "",
     price: ""
   });
+  const [cat, setCat] = useState([]);
 
   const { name, description, category, price } = product;
   const onInputChange = (e) => {
     setProduct({ ...product, [e.target.name]: e.target.value });
   }
+
   const onSubmit = async e => {
     e.preventDefault();
     await axios.post(`http://localhost:5000/products`, product)
     navigate('/products')
   }
+  const loadCategory = async () => {
+    const results = await axios.get("http://localhost:5000/categories");
+    setCat(results.data.reverse());
+  };
+  useEffect(() => {
+    loadCategory();
+  }, []);
+
+  
 
   if (!product) return "No post!"
 
@@ -38,16 +50,15 @@ const AddProduct = () => {
         </div>
         <div className="form-dark mb-4"> 
         <label htmlFor="category" className="form-label">Category</label>
-        <select type="text" className="form-control" name="category" value={category} placeholder="category" onChange={e => onInputChange(e)}>
-          <option value="volvo"> </option>
-          <option value="saab">Saab</option>
-          <option value="mercedes">Mercedes</option>
-          <option value="audi">Audi</option>
-        </select>
+        <select className="form-control"  name="category" value={category} onChange={(e) => onInputChange(e)}>
+            {cat.map((option) => (
+              <option key={option.id}>{option.category} </option>
+            ))}
+          </select>
         </div>
         <div className="form-dark mb-4"> 
         <label htmlFor="price" className="form-label">Price</label>
-        <input type="text" className="form-control" name="price" value={price} placeholder="price" onChange={e => onInputChange(e)} />
+        <input type="number" className="form-control" name="price" value={price} placeholder="price" onChange={e => onInputChange(e)} />
         </div>
         <button type="submit" className="btn btn-success btn-block mb-4">Create Product</button>  </form>
     </div>

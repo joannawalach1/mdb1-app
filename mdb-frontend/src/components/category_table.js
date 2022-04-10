@@ -62,13 +62,13 @@ const ProductsTable = () => {
                   </Link>
 
                   <Link to={`/deleteCategory/${cat.id}`}>
-                  <button className="btn btn-sm btn-light text-danger m-1">
-                    <FontAwesomeIcon
-                      icon={faTrashCan}
-                      color="danger"
-                      size="xl"
-                      onClick={() => deleteCategory(cat.id)}
-                    />
+                    <button className="btn btn-sm btn-light text-danger m-1">
+                      <FontAwesomeIcon
+                        icon={faTrashCan}
+                        color="danger"
+                        size="xl"
+                        onClick={() => deleteCategory(cat.id)}
+                      />
                     </button>
                   </Link>
                 </td>

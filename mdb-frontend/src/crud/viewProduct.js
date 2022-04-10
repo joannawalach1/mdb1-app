@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
 const ViewProduct = () => {
   const [product, setProduct] = useState({
-    name: "", 
+    name: "",
     description: "",
     category: "",
     price: "",
@@ -13,14 +13,14 @@ const ViewProduct = () => {
   const { id } = useParams();
   useEffect(() => {
     getProduct();
-  },[]);
+  }, []);
 
   const getProduct = async () => {
     const equipment = await axios.get(`http://localhost:5000/products/${id}`);
     setProduct(equipment.data);
-    console.log(equipment.data)
-  }
-    
+    console.log(equipment.data);
+  };
+
   return (
     <div className="container-fluid p-5">
       <h3 className="h3">ViewProduct</h3>
@@ -31,7 +31,7 @@ const ViewProduct = () => {
       <p>Product category: {product.category}</p>
       <p>Product price: {product.price}</p>
     </div>
-  )
-}
+  );
+};
 
 export default ViewProduct;

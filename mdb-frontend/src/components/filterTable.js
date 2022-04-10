@@ -19,7 +19,7 @@ export default function FilterTable({ data }) {
     setProduct(results.data.reverse());
   };
 
-  const deleteProduct = async id => {
+  const deleteProduct = async (id) => {
     await axios.delete(`http://localhost:5000/products/${id}`);
     loadProduct();
   };
@@ -66,20 +66,24 @@ export default function FilterTable({ data }) {
               </Link>
             </td>
           </tr>
-        ))} 
-        <tr> 
-              <td>W zestawie znajduje się: </td>
-              <td>{product.length} komplety </td>
-          </tr>
-          <tr> 
-              <td>Cena zestawu: </td>
-              <td>{product.reduce((total, currentValue) => total = Number(total) + Number(currentValue.price),0)} zł </td>
-          </tr>
+        ))}
+        <tr>
+          <td>W zestawie znajduje się: </td>
+          <td>{product.length} komplety </td>
+        </tr>
+        <tr>
+          <td>Cena zestawu: </td>
+          <td>
+            {product.reduce(
+              (total, currentValue) =>
+                (total = Number(total) + Number(currentValue.price)),
+              0
+            )}{" "}
+            zł{" "}
+          </td>
+        </tr>
       </tbody>
-      <tfoot>
-         
-         
-      </tfoot>
+      <tfoot></tfoot>
     </table>
   );
 }

@@ -6,6 +6,20 @@
       "description": "SILENTIUMPC Regnum RG6V TG",
       "category": "Podzespoły",
       "price": "30"
+    },
+    {
+      "name": "Głośniki",
+      "description": "LInkra 32TB",
+      "category": "Urządzenia peryferyjne",
+      "price": "400",
+      "id": 3
+    },
+    {
+      "name": "Procesor",
+      "description": "Intel Pentium 3A-234",
+      "category": "Podzespoły",
+      "price": "3000",
+      "id": 4
     }
   ],
   "categories": [
@@ -26,7 +40,7 @@
       "category": "Podzespoły"
     },
     {
-      "category": "umeblowanie",
+      "category": "Umeblowanie",
       "id": 7
     }
   ]

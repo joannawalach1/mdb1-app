@@ -19,10 +19,11 @@ export default function FilterTable({ data }) {
     setProduct(results.data.reverse());
   };
 
-  const deleteProduct = async (id) => {
+  const deleteProduct = async id => {
     await axios.delete(`http://localhost:5000/products/${id}`);
     loadProduct();
   };
+
   const columns = data[0] && Object.keys(data[0]);
   return (
     <table className="table table-responsive" cellPadding={0} cellSpacing={0}>
@@ -65,10 +66,8 @@ export default function FilterTable({ data }) {
               </Link>
             </td>
           </tr>
-        ))}
-      </tbody>
-      <tfoot>
-          <tr> 
+        ))} 
+        <tr> 
               <td>W zestawie znajduje się: </td>
               <td>{product.length} komplety </td>
           </tr>
@@ -76,6 +75,9 @@ export default function FilterTable({ data }) {
               <td>Cena zestawu: </td>
               <td>{product.reduce((total, currentValue) => total = Number(total) + Number(currentValue.price),0)} zł </td>
           </tr>
+      </tbody>
+      <tfoot>
+         
          
       </tfoot>
     </table>

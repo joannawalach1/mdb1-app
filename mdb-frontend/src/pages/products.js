@@ -7,7 +7,11 @@ const Products = () => {
     const [data, setData] = useState([]);
     const [q, setQ] = useState('');
     const [searchColumns, setSearchColumns] = useState([
-      'category'
+      'id',
+      'name',
+      'description',
+      'category', 
+      'price'
     ]);
   
     useEffect(() => {
@@ -60,7 +64,7 @@ const Products = () => {
           ))}
          </div>
       </form>
-      <FilterTable data={search(data)} product={data.id}/>
+      <FilterTable data={search(data)} />
       <Link to="/addProduct">
         <button className="btn btn-success" onClick={() => AddProduct}> Add new product</button>
       </Link>

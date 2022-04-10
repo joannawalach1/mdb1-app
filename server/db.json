@@ -1,60 +1,33 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "Brad",
-      "description": "Omega",
-      "category": "Tiana",
-      "price": 123
-    },
-    {
       "id": 2,
-      "name": "Alex",
-      "description": "Omni",
-      "category": "Brado",
-      "price": 345
-    },
-    {
-      "name": "joanna",
-      "description": "eeeeeeee",
-      "category": "Moni",
-      "price": "0",
-      "": "",
-      "id": 3
-    },
-    {
-      "name": "ddd",
-      "description": "ddd",
-      "category": "Alex",
-      "price": "2",
-      "": "",
-      "id": 4
+      "name": "Obudowa",
+      "description": "SILENTIUMPC Regnum RG6V TG",
+      "category": "Podzespoły",
+      "price": "30"
     }
   ],
   "categories": [
     {
-      "id": 1,
-      "category": "Brado"
-    },
-    {
-      "id": 2,
-      "category": "Alex"
-    },
-    {
       "id": 3,
-      "category": "Moni"
+      "category": "inne"
     },
     {
       "id": 4,
-      "category": "Tiana"
+      "category": "Oprogramowanie"
     },
     {
       "id": 5,
-      "category": "Sevi"
+      "category": "Urządzenia peryferyjne"
     },
     {
       "id": 6,
-      "category": "Omni"
+      "category": "Podzespoły"
+    },
+    {
+      "category": "umeblowanie",
+      "id": 7
     }
   ]
 }

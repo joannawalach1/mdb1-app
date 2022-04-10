@@ -1,0 +1,33 @@
+{
+  "products": [
+    {
+      "id": 25,
+      "name": "sss",
+      "description": "ttttttttt",
+      "category": "uuuuuuuuuu",
+      "price": "77"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "category": "Brad"
+    },
+    {
+      "id": 2,
+      "category": "Alex"
+    },
+    {
+      "id": 3,
+      "category": "Moni"
+    },
+    {
+      "id": 4,
+      "category": "Tiana"
+    },
+    {
+      "id": 5,
+      "category": "Sevi"
+    }
+  ]
+}

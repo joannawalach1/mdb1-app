@@ -26,7 +26,7 @@ export default function FilterTable({ data }) {
 
   const columns = data[0] && Object.keys(data[0]);
   return (
-    <table className="table table-responsive" cellPadding={0} cellSpacing={0}>
+    <table className="table table-responsive" id="productstable" cellPadding={0} cellSpacing={0}>
       <thead>
         <tr>
           {data[0] &&

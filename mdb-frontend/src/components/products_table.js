@@ -25,10 +25,11 @@ const ProductsTable = () => {
     loadProduct();
   };
 
+
   if (!product) return null;
 
   return (
-    <div className="table-responsive">
+    <div className="table-responsive" id="table">
       <table className="table table-sm table-light table-striped table-hover">
         <thead>
           <tr>

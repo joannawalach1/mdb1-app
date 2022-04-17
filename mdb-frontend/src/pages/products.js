@@ -2,7 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import AddProduct from "../crud/addProduct";
 import FilterTable from "../components/filterTable";
+import jsPDF from 'jspdf';
+import autoTable from 'jspdf-autotable';
 import axios from "axios";
+import ProductsTable from "../components/category_table";
 const Products = () => {
   const [data, setData] = useState([]);
   const [q, setQ] = useState("");
@@ -29,6 +32,14 @@ const Products = () => {
           row[column].toString().toLowerCase().indexOf(q.toLowerCase()) > -1
       )
     );
+  }
+
+  const printTable = () => {
+    var doc = new jsPDF();
+    doc.text(20, 20, "table");
+    doc.setFont("Verdana");
+    doc.autoTable({ html: 'table' })
+    doc.save('Test.pdf');
   }
 
   const columns = data[0] && Object.keys(data[0]);
@@ -68,13 +79,16 @@ const Products = () => {
             ))}
         </div>
       </form>
-      <FilterTable data={search(data)} />
+      <FilterTable id="table" data={search(data)} />
       <Link to="/addProduct">
-        <button className="btn btn-success" onClick={() => AddProduct}>
+        <button className="btn btn-success me-1" onClick={() => AddProduct}>
           {" "}
           Add new product
         </button>
       </Link>
+      <button className="btn btn-success" onClick={() => printTable()}>
+        Export to pdf
+      </button>
     </div>
   );
 };
